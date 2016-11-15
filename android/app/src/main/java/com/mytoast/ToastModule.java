@@ -1,5 +1,7 @@
 package com.mytoast;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.widget.Toast;
 
 import com.facebook.react.ReactActivity;
@@ -34,6 +36,10 @@ public class ToastModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void show(String message, int duration) {
         Toast.makeText(getReactApplicationContext(), message, duration).show();
+        //getCurrentActivity().startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=cxLG2wtE7TM")));
+
+        Intent it = new Intent(getCurrentActivity(), JWPlayerActivity.class);
+        getCurrentActivity().startActivity(it);
     }
 
 }
