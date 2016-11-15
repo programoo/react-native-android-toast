@@ -10,7 +10,6 @@ import {
 
 import SToastAndroid from './SToastAndroid';
 
-SToastAndroid.show('Awesome', SToastAndroid.SHORT);
 
 export default class MyToast extends Component {
   constructor(props, context) {
@@ -18,6 +17,7 @@ export default class MyToast extends Component {
   }
 
   _handlePress() {
+    SToastAndroid.show('OpenNewJWPlayer', SToastAndroid.SHORT);
     console.log('Pressed!');
   }
 
@@ -35,10 +35,11 @@ export default class MyToast extends Component {
           Shake or press menu button for dev menu
         </Text>
         <Button
-          style={{fontSize: 20, color: 'green'}}
+          containerStyle={{padding:10, height:45, overflow:'hidden', borderRadius:4, backgroundColor: 'grey'}}
+          style={{fontSize: 20, color: 'white'}}
           styleDisabled={{color: 'red'}}
           onPress={() => this._handlePress()}>
-          Press Me!
+          NEW ACTIVITY
         </Button>
       </View>
     );
