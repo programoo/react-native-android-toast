@@ -1,10 +1,6 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
+import Button from 'react-native-button';
+
 import {
   AppRegistry,
   StyleSheet,
@@ -17,6 +13,14 @@ import SToastAndroid from './SToastAndroid';
 SToastAndroid.show('Awesome', SToastAndroid.SHORT);
 
 export default class MyToast extends Component {
+  constructor(props, context) {
+    super(props, context);
+  }
+
+  _handlePress() {
+    console.log('Pressed!');
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -30,6 +34,12 @@ export default class MyToast extends Component {
           Double tap R on your keyboard to reload,{'\n'}
           Shake or press menu button for dev menu
         </Text>
+        <Button
+          style={{fontSize: 20, color: 'green'}}
+          styleDisabled={{color: 'red'}}
+          onPress={() => this._handlePress()}>
+          Press Me!
+        </Button>
       </View>
     );
   }
