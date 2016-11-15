@@ -29,6 +29,12 @@ export default class MyToast extends Component {
     console.log('Pressed!');
   }
 
+  _handleJWPlayer() {
+    //SToastAndroid.show('OpenNewJWPlayer', SToastAndroid.SHORT);
+    SToastAndroid.openJWPlayer();
+    console.log('Pressed!');
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -58,7 +64,13 @@ export default class MyToast extends Component {
           MAP
         </Button>
 
-
+        <Button
+          containerStyle={{padding:10, height:45, overflow:'hidden', borderRadius:4, backgroundColor: 'grey'}}
+          style={{fontSize: 20, color: 'white'}}
+          styleDisabled={{color: 'red'}}
+          onPress={() => this._handleJWPlayer()}>
+          JWPlayer
+        </Button>
       </View>
     );
   }
