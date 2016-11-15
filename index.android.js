@@ -10,14 +10,22 @@ import {
 
 import SToastAndroid from './SToastAndroid';
 
+SToastAndroid.show('Hello OKKAMI', SToastAndroid.SHORT);
 
 export default class MyToast extends Component {
   constructor(props, context) {
     super(props, context);
   }
 
-  _handlePress() {
-    SToastAndroid.show('OpenNewJWPlayer', SToastAndroid.SHORT);
+  _handleYoutube() {
+    //SToastAndroid.show('OpenNewJWPlayer', SToastAndroid.SHORT);
+    SToastAndroid.openYoutube();
+    console.log('Pressed!');
+  }
+
+  _handleMap() {
+    //SToastAndroid.show('OpenNewJWPlayer', SToastAndroid.SHORT);
+    SToastAndroid.openMap();
     console.log('Pressed!');
   }
 
@@ -38,9 +46,19 @@ export default class MyToast extends Component {
           containerStyle={{padding:10, height:45, overflow:'hidden', borderRadius:4, backgroundColor: 'grey'}}
           style={{fontSize: 20, color: 'white'}}
           styleDisabled={{color: 'red'}}
-          onPress={() => this._handlePress()}>
-          NEW ACTIVITY
+          onPress={() => this._handleYoutube()}>
+          YOUTUBE
         </Button>
+
+        <Button
+          containerStyle={{padding:10, height:45, overflow:'hidden', borderRadius:4, backgroundColor: 'grey'}}
+          style={{fontSize: 20, color: 'white'}}
+          styleDisabled={{color: 'red'}}
+          onPress={() => this._handleMap()}>
+          MAP
+        </Button>
+
+
       </View>
     );
   }

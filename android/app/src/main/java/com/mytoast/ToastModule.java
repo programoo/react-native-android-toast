@@ -36,10 +36,17 @@ public class ToastModule extends ReactContextBaseJavaModule {
     @ReactMethod
     public void show(String message, int duration) {
         Toast.makeText(getReactApplicationContext(), message, duration).show();
-        //getCurrentActivity().startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=cxLG2wtE7TM")));
-
-        Intent it = new Intent(getCurrentActivity(), JWPlayerActivity.class);
-        getCurrentActivity().startActivity(it);
     }
 
+    @ReactMethod
+    public void openYoutube() {
+        getCurrentActivity().startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("http://www.youtube.com/watch?v=cxLG2wtE7TM")));
+    }
+
+    @ReactMethod
+    public void openMap() {
+        Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
+                Uri.parse("http://maps.google.com/maps?saddr=Siam Paragon, 991/1 Rama I Road, Bangkok 10330&daddr=aloft hotel, Soi Sukhumvit 11, Bangkok 10110"));
+        getCurrentActivity().startActivity(intent);
+    }
 }
