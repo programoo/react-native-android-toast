@@ -49,27 +49,27 @@ export default class MyToast extends Component {
           Shake or press menu button for dev menu
         </Text>
         <Button
-          containerStyle={{padding:10, height:45, overflow:'hidden', borderRadius:4, backgroundColor: 'grey'}}
+          containerStyle={{marginTop:10, padding:10, height:45, overflow:'hidden', borderRadius:4, backgroundColor: 'grey'}}
           style={{fontSize: 20, color: 'white'}}
           styleDisabled={{color: 'red'}}
           onPress={() => this._handleYoutube()}>
-          YOUTUBE
+          NATIVE-YOUTUBE
         </Button>
 
         <Button
-          containerStyle={{padding:10, height:45, overflow:'hidden', borderRadius:4, backgroundColor: 'grey'}}
+          containerStyle={{marginTop:10, padding:10, height:45, overflow:'hidden', borderRadius:4, backgroundColor: 'grey'}}
           style={{fontSize: 20, color: 'white'}}
           styleDisabled={{color: 'red'}}
           onPress={() => this._handleMap()}>
-          MAP
+          NATIVE-MAP
         </Button>
 
         <Button
-          containerStyle={{padding:10, height:45, overflow:'hidden', borderRadius:4, backgroundColor: 'grey'}}
+          containerStyle={{marginTop:10, padding:10, height:45, overflow:'hidden', borderRadius:4, backgroundColor: 'grey'}}
           style={{fontSize: 20, color: 'white'}}
           styleDisabled={{color: 'red'}}
           onPress={() => this._handleJWPlayer()}>
-          JWPlayer
+          NATIVE-JWPlayer
         </Button>
       </View>
     );
