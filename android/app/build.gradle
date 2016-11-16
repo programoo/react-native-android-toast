@@ -57,6 +57,7 @@ dependencies {
     compile 'com.facebook.react:react-native:+'
     // From node_modules
     compile project(':jwplayer-android-sdk-2.5.3+164')
+    compile project(':react-native-i18n')
 }
 
 // Run this once to be able to run the application with BUCK

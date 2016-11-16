@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Button from 'react-native-button';
+import I18n from 'react-native-i18n';
 
 import {
   AppRegistry,
@@ -10,7 +11,31 @@ import {
 
 import SToastAndroid from './SToastAndroid';
 
-SToastAndroid.show('Hello OKKAMI', SToastAndroid.SHORT);
+SToastAndroid.show('Hello OKKAMI ' + I18n.locale, SToastAndroid.SHORT);
+
+
+I18n.fallbacks = true
+
+I18n.translations = {
+  'en': {
+    greeting: 'Hi!',
+    youtube: 'youtube-US',
+    map: 'GoogleMAP-US',
+    jwplayer: 'JWPlayer-US'
+  },
+  'en-GB': {
+    greeting: 'Hi from the UK!',
+    youtube: 'youtube-UK',
+    map: 'GoogleMAP-UK',
+    jwplayer: 'JWPlayer-UK'
+  },
+  'th-TH': {
+    greeting: 'สวัสดี',
+    youtube: 'ยูทูป',
+    map: 'แผนที่นำทาง',
+    jwplayer: 'เครื่องเล่น JWP'
+  }
+}
 
 export default class MyToast extends Component {
   constructor(props, context) {
@@ -53,7 +78,7 @@ export default class MyToast extends Component {
           style={{fontSize: 20, color: 'white'}}
           styleDisabled={{color: 'red'}}
           onPress={() => this._handleYoutube()}>
-          NATIVE-YOUTUBE
+          {I18n.t('youtube')}
         </Button>
 
         <Button
@@ -61,7 +86,7 @@ export default class MyToast extends Component {
           style={{fontSize: 20, color: 'white'}}
           styleDisabled={{color: 'red'}}
           onPress={() => this._handleMap()}>
-          NATIVE-MAP
+          {I18n.t('map')}
         </Button>
 
         <Button
@@ -69,8 +94,9 @@ export default class MyToast extends Component {
           style={{fontSize: 20, color: 'white'}}
           styleDisabled={{color: 'red'}}
           onPress={() => this._handleJWPlayer()}>
-          NATIVE-JWPlayer
+          {I18n.t('jwplayer')}
         </Button>
+        <Text>{I18n.t('greeting')}</Text>
       </View>
     );
   }
